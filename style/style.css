@@ -1,11 +1,15 @@
+
 /* FONT IMPORT */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;600&display=swap');
 
 :root {
-  --main-color: #d4af37;
-  --dark-bg: #111;
-  --light-bg: #f9f9f9;
-  --text-color: #333;
+  --main-color: #ffbd06;
+  --hover-color: #f25f4c;
+  --dark-bg: #0f0e17;
+  --medium-bg: #1a1a2e;
+  --light-bg: #2e2f3e;
+  --text-color: #fffffe;
+  --muted-text: #94a1b2;
   --heading-font: 'Playfair Display', serif;
   --body-font: 'Poppins', sans-serif;
 }
@@ -13,7 +17,7 @@
 body {
   margin: 0;
   font-family: var(--body-font);
-  background: var(--light-bg);
+  background: var(--dark-bg);
   color: var(--text-color);
 }
 
@@ -25,13 +29,13 @@ body {
 }
 
 header {
-  background: var(--dark-bg);
-  color: white;
-  padding: 2px 0;
+  background: var(--medium-bg);
+  color: var(--text-color);
+  padding: 20px 0;
   position: sticky;
   top: 0;
   z-index: 999;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
 }
 
 .logo {
@@ -50,7 +54,7 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: white;
+  color: var(--text-color);
   font-weight: bold;
   transition: color 0.3s;
 }
@@ -61,7 +65,7 @@ nav a:hover {
 
 .hero {
   background: url('../image/hero.jpg') center/cover no-repeat;
-  color: white;
+  color: var(--text-color);
   text-align: center;
   padding: 120px 20px;
   position: relative;
@@ -72,7 +76,7 @@ nav a:hover {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(15, 14, 23, 0.7);
 }
 
 .hero .container {
@@ -95,7 +99,7 @@ section h2 {
   font-size: 2.2rem;
   text-align: center;
   margin-bottom: 30px;
-  color: var(--dark-bg);
+  color: var(--main-color);
 }
 
 .about p {
@@ -104,6 +108,7 @@ section h2 {
   font-size: 1.1rem;
   line-height: 1.6;
   text-align: center;
+  color: var(--muted-text);
 }
 
 .menu-grid {
@@ -114,22 +119,31 @@ section h2 {
 }
 
 .menu-item {
-  background: white;
+  background: var(--light-bg);
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   text-align: center;
 }
 
 .menu-item h3 {
   margin-bottom: 10px;
   font-size: 1.3rem;
+  color: var(--text-color);
 }
 
 .menu-item span {
   color: var(--main-color);
   font-weight: bold;
   font-size: 1.1rem;
+}
+
+.menu-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .gallery-grid {
@@ -144,7 +158,7 @@ section h2 {
   height: 200px;
   object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   transition: transform 0.3s;
 }
 
@@ -156,6 +170,7 @@ section h2 {
   text-align: center;
   font-size: 1.1rem;
   line-height: 1.8;
+  color: var(--muted-text);
 }
 
 .map-container {
@@ -170,11 +185,35 @@ section h2 {
 }
 
 footer {
-  background: var(--dark-bg);
-  color: #ccc;
+  background: var(--medium-bg);
+  color: var(--muted-text);
   text-align: center;
   padding: 20px 0;
   font-size: 0.9rem;
+}
+
+/* HEADER logo */
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo-container {
+  flex: 0 0 auto;
+}
+
+.logo {
+  height: 150px;
+  width: auto;
+}
+
+a {
+  color: var(--main-color);
+}
+a:hover {
+  color: var(--hover-color);
 }
 
 @media (max-width: 768px) {
@@ -194,35 +233,4 @@ footer {
   section h2 {
     font-size: 1.8rem;
   }
-}
-/* HEADER logo */
-.header-flex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.logo-container {
-  flex: 0 0 auto;
-}
-
-.logo {
-  height: 150px;
-  width: auto;
-}
-
-/* MENU images */
-.menu-item img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-.elegant-title {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.8rem;
-  color: var(--main-color);
 }
