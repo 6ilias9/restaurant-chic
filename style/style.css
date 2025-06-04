@@ -1,15 +1,14 @@
-
 /* FONT IMPORT */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;600&display=swap');
 
 :root {
-  --main-color: #ffbd06;
-  --hover-color: #f25f4c;
-  --dark-bg: #0f0e17;
-  --medium-bg: #1a1a2e;
-  --light-bg: #2e2f3e;
-  --text-color: #fffffe;
-  --muted-text: #94a1b2;
+  --main-color: #ff8906;       /* Orange vif */
+  --hover-color: #f25f4c;      /* Rouge doux au survol */
+  --dark-bg: #0f0e17;          /* Fond général sombre */
+  --medium-bg: #1a1a2e;        /* Header et footer */
+  --light-bg: #2e2f3e;         /* Cartes et encarts */
+  --text-color: #fffffe;       /* Texte clair */
+  --muted-text: #94a1b2;       /* Texte secondaire */
   --heading-font: 'Playfair Display', serif;
   --body-font: 'Poppins', sans-serif;
 }
@@ -212,6 +211,7 @@ footer {
 a {
   color: var(--main-color);
 }
+
 a:hover {
   color: var(--hover-color);
 }
@@ -232,5 +232,82 @@ a:hover {
 
   section h2 {
     font-size: 1.8rem;
+  }
+}
+
+/* === RESPONSIVE DESIGN === */
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 20px;
+  }
+
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .menu-grid, .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  section h2 {
+    font-size: 1.8rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .map-container img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .logo {
+    height: 100px;
+  }
+
+  footer {
+    font-size: 0.8rem;
   }
 }
